@@ -3,7 +3,6 @@ using NewsApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddSingleton<IRssFetcher, RssFetcher>();
 builder.Services.AddControllers();
 
@@ -24,9 +23,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
 
