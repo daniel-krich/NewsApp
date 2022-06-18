@@ -1,0 +1,21 @@
+.notFoundWrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #66ccff, #9999ff);
+}
+
+.Title {
+    font-family: 'Assistant';
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.Content {
+    font-family: 'Assistant';
+    font-size: 20px;
+    color: #ffffffcc;
+}

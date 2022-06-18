@@ -1,0 +1,43 @@
+<div class="NewsWrapper">
+    <div class="NewsBoxColumnTaskbar">
+        <div class="TaskbarTitle">{{currentDate | date: 'mediumDate'}} | חדשות היום</div>
+        <button class="RefreshButton" (click)="newsService.fetchNews()">🗘</button>
+    </div>
+    <div class="NewsBox">
+        <div class="NewsBoxColumnContent">
+            <div [ngSwitch]="newsService.currentArticle">
+                <div *ngSwitchCase="undefined">
+                    <div class="ArticleViewBoxPlaceholder">
+                        <div class="holderTitle">ברוכים הבאים לאתר החדשות</div>
+                        <div class="holderContent">לחצו על הכתבות כדי להתחיל לקרוא</div>
+                    </div>
+                </div>
+
+                <div *ngSwitchDefault>
+                    <div class="ArticleTitle">
+                        {{newsService.currentArticle?.title}}
+                    </div>
+                    <div class="ArticleCreationMeta">
+                        {{newsService.currentArticle?.publishDate | date: 'medium'}}
+                    </div>
+                    <div class="ArticleCreationMeta">
+                        {{newsService.currentArticle?.tags}}
+                    </div>
+                    <hr class="ArticleBreak">
+                    <div class="ArticleText hideImage" [innerHTML]="newsService.currentArticle?.description | safeHtml"></div>
+                    <div class="ArticleForeignLink">
+                        <a class="ArticleViewBoxForeignLinkAnchor" href="{{newsService.currentArticle?.link}}" target="_blank">
+                            לכתבה המלאה
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="NewsBoxColumnFeed">
+            <div class="LoadingRows" *ngIf="newsService.currentFeed==undefined">...טוען כתבות</div>
+            <div class="Feedrow" *ngFor="let item of newsService.currentFeed?.rss?.channel?.items ?? []; let articleId = index;" (click)="newsService.viewArticle(articleId)">
+                <div class="FeedrowTitle">{{item.title}}</div>
+            </div>
+        </div>
+    </div>
+</div>
