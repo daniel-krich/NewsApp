@@ -6,7 +6,8 @@ Using C# ASP .NET Core & Angular.
 
 ### Mobile view ###
 ![p3](https://user-images.githubusercontent.com/87533517/174494190-59c0ec4c-7827-47f0-8656-b2606829f2b4.png)
+![p4](https://user-images.githubusercontent.com/87533517/174497867-6e195459-388a-494e-8bad-0748ef07ca67.png)
 
 ### Desktop view ###
-![p1](https://user-images.githubusercontent.com/87533517/174494184-4df6231a-5360-4833-a5d5-6f03266783dc.png)
-![p2](https://user-images.githubusercontent.com/87533517/174494195-e54fcb31-bb9c-4243-95f1-284c54d7efca.png)
+![p1](https://user-images.githubusercontent.com/87533517/174497788-5bfe2ae6-16e4-4b82-ab87-ee706296b9e7.png)
+![p2](https://user-images.githubusercontent.com/87533517/174497790-3fd551dd-4eb4-417d-9fa9-d736ba073cbf.png)
