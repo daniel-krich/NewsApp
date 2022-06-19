@@ -14,4 +14,10 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
       this.newsService.fetchNews();
   }
+
+  scrollToArticle() {
+    document.body?.scrollIntoView({
+        behavior: 'smooth'
+      });
+  }
 }

@@ -40,6 +40,9 @@
   			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
   		</ResolvedFileToPublish>
   	</ItemGroup>
+
+	<Copy SourceFiles="@(DistFiles)" DestinationFolder="$(SolutionDir)\$(MSBuildProjectName)\wwwroot\%(RecursiveDir)"/>
+	  
   </Target>
 
 </Project>

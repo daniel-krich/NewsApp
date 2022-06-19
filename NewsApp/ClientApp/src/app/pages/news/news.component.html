@@ -4,7 +4,7 @@
         <button class="RefreshButton" (click)="newsService.fetchNews()">🗘</button>
     </div>
     <div class="NewsBox">
-        <div class="NewsBoxColumnContent">
+        <div class="NewsBoxColumnContent" id="article-view">
             <div [ngSwitch]="newsService.currentArticle">
                 <div *ngSwitchCase="undefined">
                     <div class="ArticleViewBoxPlaceholder">
@@ -24,7 +24,7 @@
                         {{newsService.currentArticle?.tags}}
                     </div>
                     <hr class="ArticleBreak">
-                    <div class="ArticleText hideImage" [innerHTML]="newsService.currentArticle?.description | safeHtml"></div>
+                    <div class="ArticleText" [innerHTML]="newsService.currentArticle?.description | safeHtml"></div>
                     <div class="ArticleForeignLink">
                         <a class="ArticleViewBoxForeignLinkAnchor" href="{{newsService.currentArticle?.link}}" target="_blank">
                             לכתבה המלאה
@@ -35,7 +35,7 @@
         </div>
         <div class="NewsBoxColumnFeed">
             <div class="LoadingRows" *ngIf="newsService.currentFeed==undefined">...טוען כתבות</div>
-            <div class="Feedrow" *ngFor="let item of newsService.currentFeed?.rss?.channel?.items ?? []; let articleId = index;" (click)="newsService.viewArticle(articleId)">
+            <div class="Feedrow" *ngFor="let item of newsService.currentFeed?.rss?.channel?.items ?? []; let articleId = index;" (click)="newsService.viewArticle(articleId); scrollToArticle();">
                 <div class="FeedrowTitle">{{item.title}}</div>
             </div>
         </div>
