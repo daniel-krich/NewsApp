@@ -175,9 +175,34 @@ hr.ArticleBreak {
     transform: translate(-50%, -50%);
 }
 
+.holderArrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.holderArrow img {
+    display: none;
+}
+
 @media screen and (max-width: 900px) {
     .NewsBox {
         flex-direction: column;
+    }
+
+    .holderArrow img {
+        display: block;
+        margin: 30px;
+        width: 70px;
+        height: 70px;
+        animation: 1s ease arrowMoveDown alternate infinite;
+    }
+
+    @keyframes arrowMoveDown {
+        from {transform: translateY(0px) rotate(90deg);}
+        to {transform: translateY(30px) rotate(90deg);}
     }
 
     .NewsWrapper {
