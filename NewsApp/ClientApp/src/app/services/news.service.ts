@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { RssFeed, RssObj, RssItem } from '../models/RssFeedModel';
-import * as rssObj from '../../assets/dummyNews.json';
+//import * as rssObj from '../../assets/dummyNews.json';
 
 @Injectable({
   providedIn: 'root'

@@ -5,7 +5,7 @@
     </div>
     <div class="NewsBox">
         <div class="NewsBoxColumnContent" id="article-view">
-            <div [ngSwitch]="newsService.currentArticle">
+            <div class="ArticleBox" [ngSwitch]="newsService.currentArticle">
                 <div *ngSwitchCase="undefined">
                     <div class="ArticleViewBoxPlaceholder">
                         <div class="holderTitle">ברוכים הבאים לאתר החדשות</div>
